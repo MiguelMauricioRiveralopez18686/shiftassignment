@@ -1,0 +1,345 @@
+    /* Variables CSS para el tema */
+    :root {
+        --body-bg: #f8f9fa;
+        --text-color: #212529;
+        --card-bg: #ffffff;
+        --card-header-bg: #007bff;
+        --table-header-bg: #e9ecef;
+        --primary-blue: #007bff;
+        --primary-blue-hover: #0056b3;
+        --light-green: #66BB6A;
+        /* Verde más claro para botones de edición */
+        --light-green-hover: #4CAF50;
+        --navbar-bg: #007bff;
+        --navbar-text: #fff;
+        --navbar-text-hover: #e2e6ea;
+        --input-border: #ced4da;
+        --input-placeholder: #6c757d;
+    }
+
+    /* Estilos del modo oscuro */
+    body.dark-mode {
+        --body-bg: #212529;
+        /* Gris oscuro */
+        --text-color: #f8f9fa;
+        /* Gris claro */
+        --card-bg: #343a40;
+        /* Gris más oscuro */
+        --card-header-bg: #004085;
+        /* Azul más oscuro */
+        --table-header-bg: #495057;
+        /* Gris oscuro medio */
+        --primary-blue: #0056b3;
+        /* Azul primario ligeramente más oscuro */
+        --primary-blue-hover: #003366;
+        --navbar-bg: #004085;
+        --navbar-text: #f8f9fa;
+        --navbar-text-hover: #ffffff;
+        --input-border: #6c757d;
+        --input-placeholder: #adb5bd;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--body-bg);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        background-image: url(../img/logo-shiftassignment.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+         min-height: 100vh;
+        width: 100%;
+         box-sizing: border-box;
+    }
+@media (max-width: 768px) {
+  body {
+    background-size: contain; /* Podrías usar 'contain' aquí si prefieres que la imagen sea completamente visible, ajustándose sin recortes */
+    background-position: top center; /* Por ejemplo, si quieres que se alinee arriba en móviles */
+  }
+}
+    .navbar {
+        background-color: var(--navbar-bg);
+        transition: background-color 0.3s ease;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .navbar-brand,
+    .nav-link {
+        color: var(--navbar-text) !important;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-brand:hover,
+    .nav-link:hover {
+        color: var(--navbar-text-hover) !important;
+    }
+
+    .container {
+        padding-bottom: 40px;
+        padding-top: 120px;
+    }
+
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .card-header {
+        background-color: var(--card-header-bg);
+        color: white;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-weight: 500;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--primary-blue-hover);
+        border-color: var(--primary-blue-hover);
+    }
+
+    .btn-outline-secondary {
+        border-radius: 8px;
+    }
+
+    .btn-edit-green {
+        /* Nueva clase para botones de edición */
+        background-color: var(--light-green);
+        border-color: var(--light-green);
+        color: white;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-edit-green:hover {
+        background-color: var(--light-green-hover);
+        border-color: var(--light-green-hover);
+        color: white;
+    }
+
+    .table {
+        border-radius: 10px;
+        overflow: hidden;
+        /* Asegura que los bordes redondeados se apliquen a la tabla */
+        color: var(--text-color);
+        /* Asegura que el color del texto de la tabla se adapte */
+    }
+
+    .table thead {
+        background-color: var(--table-header-bg);
+        transition: background-color 0.3s ease;
+    }
+
+    .table th,
+    .table td {
+        border-color: var(--table-header-bg);
+        /* Ajustar el color del borde para el modo oscuro */
+    }
+
+    .form-control,
+    .form-select {
+        border-radius: 8px;
+        background-color: var(--card-bg);
+        /* Los controles de formulario deben adaptarse */
+        color: var(--text-color);
+        border: 1px solid var(--input-border);
+        /* Borde predeterminado */
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .form-control::placeholder {
+        /* Color del texto del marcador de posición */
+        color: var(--input-placeholder);
+    }
+
+    .modal-content {
+        border-radius: 15px;
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .modal-header {
+        background-color: var(--card-header-bg);
+        color: white;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        transition: background-color 0.3s ease;
+    }
+
+    .modal-footer .btn {
+        border-radius: 8px;
+    }
+
+    .schedule-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .schedule-day-card {
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: var(--card-bg);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark-mode .schedule-day-card {
+        border-color: #495057;
+    }
+
+    .schedule-day-card h5 {
+        color: var(--primary-blue);
+        /* El color del encabezado se adapta al azul primario */
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .schedule-day-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .schedule-day-card li {
+        margin-bottom: 5px;
+        font-size: 0.95em;
+        display: flex;
+        /* Para alinear texto y botón de eliminar */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .schedule-day-card li strong {
+        color: var(--text-color);
+        /* Asegura que el color del texto fuerte se adapte */
+    }
+
+    .no-assignments {
+        text-align: center;
+        color: #6c757d;
+        padding: 20px;
+        font-style: italic;
+    }
+
+    /* Estilos para la visibilidad de la sección */
+    .content-section {
+        display: none;
+        /* Ocultar todas las secciones por defecto */
+    }
+
+    .content-section.active {
+        display: block;
+        /* Mostrar sección activa */
+    }
+
+    /* Interruptor de modo oscuro */
+    .theme-switch-wrapper {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        /* Push to right */
+        margin-right: 15px;
+    }
+
+    .theme-switch {
+        display: inline-block;
+        height: 24px;
+        position: relative;
+        width: 48px;
+    }
+
+    .theme-switch input {
+        display: none;
+    }
+
+    .slider {
+        background-color: #ccc;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+    .slider:before {
+        background-color: #fff;
+        bottom: 4px;
+        content: "";
+        height: 16px;
+        left: 4px;
+        position: absolute;
+        transition: .4s;
+        width: 16px;
+        border-radius: 50%;
+    }
+
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(24px);
+    }
+
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .theme-icon {
+        margin-left: 8px;
+        fill: var(--navbar-text);
+        transition: fill 0.3s ease;
+    }
+
+    .btn-close-white {
+        filter: invert(1) brightness(2);
+        /* Hace que el icono de cierre de Bootstrap sea blanco */
+    }
+
+    #auth-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 56px);
+        /* Adjust for navbar height */
+        padding-top: 120px;
+    }
+
+    #auth-section .card {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+    }
+
+    #auth-section .card-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
